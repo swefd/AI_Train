@@ -21,9 +21,11 @@ print(int(os.path.split(imagePath)[1]))
 
 def getImageAndLabels(path):
     imagePaths = [os.path.join(path, f) for f in os.listdir(path)]
+    print(imagePaths)
     faceSamples = []
     ids = []
     for imagePath in imagePaths:
+        print(imagePath)
         for image in os.listdir(imagePath):
             image = os.path.join(imagePath, image)
             print(image)
@@ -35,7 +37,7 @@ def getImageAndLabels(path):
             for (x, y, w, h) in faces:
                 faceSamples.append(img_numpy[y:y+h, x:x+w])
                 ids.append(id)
-        return faceSamples, ids
+    return faceSamples, ids
 
 print("TRAINING")
 faces, ids = getImageAndLabels(path)

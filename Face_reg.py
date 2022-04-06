@@ -34,7 +34,7 @@ while True:
     cv2.imshow("img", image)
     if cv2.waitKey(10) == 27:
         break
-    elif count >= 100:
+    elif count >= 200:
         print("done")
         break
 
